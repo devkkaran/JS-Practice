@@ -62,6 +62,7 @@ console.log(Object.entries(myObject));
 for (let [key, value] of Object.entries(myObject)) {
     console.log(key + ": " + value);
 }
+console.log(Object.entries(myObject));
 for (let key of Object.entries(myObject)) {
     console.log(key);
 }
@@ -80,6 +81,6 @@ let arrayOfObjects = [
 ];
 
 for (let obj of arrayOfObjects) {
-    console.log(`Name: ${obj.name}, Age: ${obj.age}`);
+    // console.log(`Name: ${obj.name}, Age: ${obj.age}`);
 }
-console.log(Object.entries(arrayOfObjects));
+// console.log(Object.entries(arrayOfObjects));
