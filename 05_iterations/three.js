@@ -82,5 +82,7 @@ let arrayOfObjects = [
 
 for (let obj of arrayOfObjects) {
     // console.log(`Name: ${obj.name}, Age: ${obj.age}`);
+
+    
 }
 // console.log(Object.entries(arrayOfObjects));
