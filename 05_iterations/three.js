@@ -26,7 +26,7 @@ map.set("AUS", "Australia")
 
 console.log(map);
 console.log(Object.keys(map));
-
+console.log(map.keys());
 console.log(typeof map);
 
 console.log(map instanceof Object);

@@ -21,12 +21,12 @@ console.log(newValues);
 
 const myNums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-// const graterthanFour = myNums.forEach((myNum) => 
-//      myNum > 4
+const graterthanFour = myNums.forEach((myNum) => 
+     myNum > 4
 
-//  );
+ );
 
-// console.log(graterthanFour);
+console.log(graterthanFour);
 
 const checkWithFilter = myNums.filter(
     (number) => 
@@ -60,12 +60,23 @@ const books = [
     { title: 'Book Nine', genre: 'Non-Fiction', publish: 1981, edition: 1989 },
   ];
 
+  function booksGenre (num){
+    return num.genre === "Non-Fiction"  ? num : false;
+}
+
+console.log(booksGenre(books));
+
 
   let filterBooks = books.filter(
     (name) => name.edition >= 2000
   )
 
+//   let mapFiterBooks = books.map(
+//     (book) => {book.genre == "Non-Fiction",
+//                 mapFiterBooks.push(book.genre);
+//     }
   
+//   console.log(mapFiterBooks);
   
 //   filterBooks = books.filter(
 //       (name) => {
@@ -73,7 +84,7 @@ const books = [
 //         }
 //     )
     
-    console.log(filterBooks);
+    // console.log(filterBooks);
 
     function greatFour(num){
         return num > 4 ? num : false;
