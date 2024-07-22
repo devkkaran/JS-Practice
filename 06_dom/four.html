@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Chai aur Code</title>
+</head>
+<body>
+        <ul class="language">
+            <li>Python</li>
+        </ul>    
+</body>
+<script>
+    function addLanguage(language){
+        const newLi = document.createElement("li");
+        newLi.innerHTML = `${language}`;
+
+        document.querySelector(".language").appendChild(newLi);
+        console.log(newLi.innerHTML);
+
+
+    }
+
+    addLanguage("Java Script");
+    addLanguage("PHP");
+
+    function addOptlanguage(langName){
+        const li = document.createElement("li");
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector(".language").appendChild(li);
+    }
+    
+    addOptlanguage("Ruby");
+
+    // Edit
+    const secondLog = document.querySelector("li:nth-child(2)")
+    secondLog.innerHTML = "Personal Language";  // we can use innerHTML
+    const secondLi = document.createElement("li");
+    secondLi.textContent = "RimZim";
+    secondLog.replaceWith(secondLi);
+
+    // Edit With SHort Method
+    const replaceFirst = document.querySelector("li:first-child");
+    replaceFirst.outerHTML = "<li> Type Scirpt </li>"   // using outerHTML it replace completely
+
+    // Remove
+    const lastLang = document.querySelector("li:last-child");
+    lastLang.remove();
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>

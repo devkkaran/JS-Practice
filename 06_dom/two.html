@@ -6,9 +6,10 @@
     <title>DoM Manipulation | Chai Aur Code</title>
 </head>
 <body style="background-color: black; color: white;">
+    <h1>DOM Manipulation</h1>
         <div class="parent">
             <div class="day">Sun</div>
-            <div class="day">Mon</div>
+            <div class="day"> <div>This is next Element </div></div>
             <div class="day">Tues</div>
             <div class="day">Wed</div>
             <div class="day">Thu</div>
@@ -20,8 +21,34 @@
     const parent = document.querySelector('.parent');
     console.log(parent);
     console.log(parent.children);
+    console.log(parent.style.color = "yellow");
 
     // const classParent = document.getElementsByClassName('parent');
     // console.log(classParent);
+
+    // const parentId = document.getElementsByClassName("day");  // not work in html collection
+    // console.log(parentId.firstElementChild);
+
+    for(let i = 0; i < parent.children.length; i++){
+        console.log(parent.children[i]);
+    }
+
+    // console.log(parent.firstElementChild);
+    // console.log(parent.lastElementChild);
+    // console.log(day.secondElementSibling);
+
+    const day = document.querySelector(".day");
+    console.log(day.parentElement);
+    console.log(day.nextElementSibling);
+    console.log(day);
+
+
+    console.log("Nodes: ", parent.childNodes);
+    console.log("Nodes: ", parent.children);
+
+    // it shows HTML Collection doesn't have property hich redirect individual  element for that we have to use individual element selector
+    const parentId = document.getElementsByClassName("day");  
+    console.log(parentId);
+
 </script>
 </html>
