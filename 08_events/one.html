@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-ry3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // document.getElementById('owl').onclick = function(){
+    //     alert("owl clicked")
+    // }
+
+     // attachEvent()
+    // jQuery - on
+    document.getElementById('images').addEventListener('click', function(e){
+        // console.log('Click inside ul');
+    }, false)
+
+
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log('Owl clicked');
+        // console.log(e);   // poiner event
+        // console.log(e.timeStamp);
+        // console.log(e.target);          //HTML tag element
+        // e.stopPropagation();         
+    }, false)
+
+
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY56 
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target);
+        
+        if(e.target.tagName === 'IMG'){
+            let removeIt = e.target.parentNode;
+            removeIt.remove();
+            console.log(removeIt);
+        }
+        // removeIt.parentNode.removeChild(removeIt)  // this is different way
+        
+
+    })
+    
+    
+</script>
+</html>
+
+
+<!-- In the context of your code, you cannot directly use forEach on document.querySelector('#images') because document.querySelector('#images') returns a single DOM element, not a collection of elements. The forEach method is available on arrays and NodeLists (which are collections of DOM elements), not on individual DOM elements.
+
+However, if you want to use forEach to add event listeners to multiple elements, you need to first select a collection of elements. In your case, you would select all img elements within the #images ul.
+
+Here's how you can do that: -->

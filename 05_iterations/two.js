@@ -3,7 +3,7 @@ let arr = 0;
 
 while (arr < myArray.length) {
     console.log(`Array Name : ${myArray[arr]}`);
-    arr = arr + 1;
+    arr += 1;
 }
 
 

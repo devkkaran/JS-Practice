@@ -71,12 +71,15 @@ console.log(booksGenre(books));
     (name) => name.edition >= 2000
   )
 
-//   let mapFiterBooks = books.map(
-//     (book) => {book.genre == "Non-Fiction",
-//                 mapFiterBooks.push(book.genre);
-//     }
+  let mapFiterBooks = [];
   
-//   console.log(mapFiterBooks);
+  let mapBooks = books.map(
+    (book) => {
+        if(book.genre == "Non-Fiction"){
+            console.log(book)}
+    })
+  
+  console.log(mapFiterBooks);
   
 //   filterBooks = books.filter(
 //       (name) => {
@@ -84,10 +87,10 @@ console.log(booksGenre(books));
 //         }
 //     )
     
-    // console.log(filterBooks);
+//     console.log(filterBooks);
 
-    function greatFour(num){
-        return num > 4 ? num : false;
-    }
+//     function greatFour(num){
+//         return num > 4 ? num : false;
+//     }
 
-    console.log(greatFour(9));
+//     console.log(greatFour(9));

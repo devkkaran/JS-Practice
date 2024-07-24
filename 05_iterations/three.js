@@ -5,8 +5,8 @@
 
 const arr = [1, 22, 33 , 44];
 
-for (const num of arr) {
-    console.log(num);
+for (const [key, value] of arr) {
+    console.log(`${key} || ${value}`);
 }
 
 const greeting = "Hello World!";
