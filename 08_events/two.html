@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai Aur Code</h1>
+
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const timoutTest = function(){
+        document.querySelector('h1').innerHTML = "Testing Of setTimeout";
+    }
+
+    const changeMe = setTimeout(timoutTest, 5000); // Handler Timeout ni andar callback, function, reference che 
+
+    const secondTest = function(){
+        console.log("Hello Buddy My Name is Devkaran");
+    }
+
+    setTimeout(secondTest, 2000);
+
+// It is about Clear TImeout function 
+    // const clearTime = clearTimeout(changeMe);
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changeMe);
+        console.log('STOOOP');
+    })
+
+</script>
+</html>

@@ -36,7 +36,6 @@ const course = [
 
 ]
 
-
 const totalPrice = course.reduce(
     (acc, curVal) => (acc + curVal.price),
 0)

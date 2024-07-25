@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>htnml Events </title>
+    <title>HTML Events </title>
 </head>
 <body style="background-color: #414141; color: aliceblue;">
     <h2>Amazing image</h2>
@@ -14,11 +14,35 @@
             <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
             <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-ry3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
             <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
-            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google" onclick="one(event)">Google</a></li>
         </ul>
    </div>
 </body>
 <script>
+    // This is about synchronous
+    // one();
+    // two();
+    // three();
+    // function check(){
+
+    // }
+
+
+    // check();
+
+    function one(e){
+        e.preventDefault();
+        console.log('one');
+    }
+    
+    const two = function (){
+        console.log('two');
+    }
+    const three = () => {
+        console.log('three');
+    }
+
+    
     // document.getElementById('owl').onclick = function(){
     //     alert("owl clicked")
     // }
@@ -46,10 +70,10 @@
     // altkey, ctrlkey, shiftkey, keyCode
 
     document.querySelector('#images').addEventListener('click', function(e){
-        console.log(e.target);
+        console.log(e);
         
         if(e.target.tagName === 'IMG'){
-            let removeIt = e.target.parentNode;
+            let removeIt = e.target.parentElement;
             removeIt.remove();
             console.log(removeIt);
         }
