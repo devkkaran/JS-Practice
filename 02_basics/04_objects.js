@@ -109,7 +109,7 @@ const tinderUser1 =  [
 
 // console.log(tinderUser1);
 
-// console.log(Object.keys(tinderUser1));
+console.log(Object.keys(tinderUser1));
 // console.log(Object.values(tinderUser1));
 console.log(Object.entries(tinderUser1));
 // console.log(tinderUser1.hasOwnProperty('isLoggedIn'));

@@ -1,4 +1,9 @@
 const coding = ["js", "ruby", "java", "python", "cpp"];
+const testNum = [1, 23, 56, 89, 78];
+
+testNum.forEach((num) => {
+    console.log(num > 5);
+})
 
 coding.forEach((name) => {
     console.log(name);
@@ -15,8 +20,8 @@ function printMe(name){
 coding.forEach(printMe);
 // coding.forEach("printMe");       // not work this
 
-coding.forEach((item, index, arr) => {
-    console.log(item, index, arr);
+testNum.forEach((item, index, arr) => {
+    console.log(item > 0, index, arr);
 })
 
 const myCoding = [

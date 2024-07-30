@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="devkaran.scss"> -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+          <div class="front">
+            <div class="logo"><span></span></div>
+          </div>
+          <div class="back">
+            <h1>Helen Parker<span>design <i>&</i> photography</span></h1>
+            <ul>
+              <li>+1-111-111-11-11</li>
+              <li>my-email@email.com</li>
+              <li>my-site.com</li>
+              </ul>
+          </div>
+          </div>
+        </div>
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/devkaran-k'; 
+    const xhr = new XMLHttpRequest();
+
+    xhr.open('GET', requestUrl);
+    console.log(xhr);
+    console.log(xhr.onreadystatechange);
+    let data;
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){
+            console.table(this.responseText);
+            const data = JSON.parse(this.responseText);  // response come in string 
+            console.table(data.following);
+        }
+    }
+
+    xhr.send();
+</script>
+</html>

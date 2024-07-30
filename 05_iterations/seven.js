@@ -1,5 +1,14 @@
 const myNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
+const testNum = [1, 23, 56, 89, 78];
+    
+    const num = testNum.forEach((num) => {
+        console.log(num > 5);
+    })
+    
+    console.log();
+
+    
 const arrayMap = myNumbers.map(
     (num) =>  (
         num > 4

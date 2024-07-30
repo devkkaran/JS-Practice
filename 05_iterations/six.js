@@ -22,7 +22,7 @@ console.log(newValues);
 const myNums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const graterthanFour = myNums.forEach((myNum) => 
-     myNum > 4
+    console.log(myNum)
 
  );
 
@@ -59,38 +59,56 @@ const books = [
     { title: 'Book Eight', genre: 'Science', publish: 2011, edition: 2016 },
     { title: 'Book Nine', genre: 'Non-Fiction', publish: 1981, edition: 1989 },
   ];
-
+  
+  console.log("<-------------------- Only Function ----------------------->");
+  
   function booksGenre (num){
     return num.genre === "Non-Fiction"  ? num : false;
-}
+  }
+  
+  console.log(booksGenre(books));
+  
+  function greatFour(num){
+    return num > 4 ? num : false;
+      }
+  
+      console.log(greatFour(9));
+console.log("<-------------------- Filter Function ----------------------->");
 
-console.log(booksGenre(books));
+let filterBooks = books.filter(
+  (name) => name.edition >= 2000
+)
 
+console.log(filterBooks);
 
-  let filterBooks = books.filter(
+console.log("<-------------------- ForEach Function ----------------------->");
+
+let forEachBooks = books.forEach(
+  (name) => {console.log(name.edition >= 2000);}
+)
+
+console.log(forEachBooks);
+console.log("<-------------------- MAP Function ----------------------->");
+let mapFiterBooks = [];
+let mapBooks = books.map(
+    // (book) => {
+    //   if(book.genre == "Non-Fiction"){
+    //         console.log(book)}
+    // }
     (name) => name.edition >= 2000
+  
+  
   )
-
-  let mapFiterBooks = [];
   
-  let mapBooks = books.map(
-    (book) => {
-        if(book.genre == "Non-Fiction"){
-            console.log(book)}
-    })
+  console.log(mapBooks);
   
-  console.log(mapFiterBooks);
-  
-//   filterBooks = books.filter(
+  //   filterBooks = books.filter(
 //       (name) => {
 //           return name.genre == "History" || name.genre == "Science";
 //         }
 //     )
-    
+
 //     console.log(filterBooks);
 
-//     function greatFour(num){
-//         return num > 4 ? num : false;
-//     }
-
-//     console.log(greatFour(9));
+    
+    

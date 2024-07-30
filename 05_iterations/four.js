@@ -29,3 +29,14 @@ let arrayOfObjects = [
     { name: "Bob", age: 25 },
     { name: "Charlie", age: 35 }
 ];
+
+for (const key in arrayOfObjects) {
+    console.log(key);
+    // console.log(myArr[key]);
+}
+
+const checkString = 'Devkaran';
+
+for (const key in checkString) {
+    console.log(checkString[key]);
+}

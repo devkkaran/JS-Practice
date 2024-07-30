@@ -5,8 +5,8 @@
 
 const arr = [1, 22, 33 , 44];
 
-for (const [key, value] of arr) {
-    console.log(`${key} || ${value}`);
+for (const key of arr) {
+    console.log(`${key}`);
 }
 
 const greeting = "Hello World!";
@@ -81,8 +81,9 @@ let arrayOfObjects = [
 ];
 
 for (let obj of arrayOfObjects) {
-    // console.log(`Name: ${obj.name}, Age: ${obj.age}`);
+    console.log(`Name: ${obj.name}, Age: ${obj.age}`);
 
     
 }
+
 // console.log(Object.entries(arrayOfObjects));
