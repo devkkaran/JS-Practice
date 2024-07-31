@@ -1,23 +1,24 @@
 const coding = ['Java Script', "ruby", "Python", "CSS"];
 
-// const newValues = coding.forEach(
-//     (value) => {
-//         console.log(value)
-//         // return value;
+const checkError = coding.forEach(
+    (value) => {
+        console.log(value)
+        // return value;
         
-//     }
-// )
-
-const newValues = coding.forEach(
-    (value) => 
-        // console.log(value)
-         value
-        
-    
+    }
 )
 
+console.log(checkError);
+// const newValues = coding.forEach(
+//     (value) => 
+//         // console.log(value)
+//          value
+        
+    
+// )
 
-console.log(newValues);
+
+// console.log(newValues);
 
 const myNums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 

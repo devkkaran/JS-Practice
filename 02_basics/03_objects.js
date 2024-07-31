@@ -56,3 +56,6 @@ JsUser.greeting2 = function(){
 }
 console.log(JsUser.greeting());
 console.log(JsUser.greeting2());
+
+
+

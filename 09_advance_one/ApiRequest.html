@@ -21,7 +21,7 @@
 
     xhr.onreadystatechange = function(){
         console.log(xhr.readyState);
-        if(xhr.readyState === 4){
+        if(this.readyState === 4){
             console.table(this.responseText);
             const data = JSON.parse(this.responseText);  // response come in string 
             console.table(data.following);
@@ -29,5 +29,15 @@
     }
 
     xhr.send();
+
+    new Promise(function(resolve){
+        setTimeout(() => {
+            console.log('It is revision of Promise');
+        }, 1);
+        resolve();
+        
+    }).then(function(){
+        console.log('Problem is solved');
+})
 </script>
 </html>

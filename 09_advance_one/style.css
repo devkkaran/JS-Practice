@@ -52,7 +52,7 @@ body {
   width: 200px;
   height: 200px;
   position: relative;
-  background-image: url('https://avatars.githubusercontent.com/u/137026533?v=4'); /* Add the URL of your image here */
+  /* background-image: url('https://avatars.githubusercontent.com/u/137026533?v=4'); Add the URL of your image here */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -117,7 +117,7 @@ ul:after {
 }
 
 li {
-  width: 31.3333333333%;
+  width: 47.333333%;
   margin: 0 1%;
   float: left;
   padding: 10px;
@@ -169,3 +169,4 @@ h1 span {
   color: #4E203C;
   display: block;
   font-size: .45em;
+}

@@ -14,10 +14,10 @@
             <div class="logo"><span></span></div>
           </div>
           <div class="back">
-            <h1>Helen Parker<span>design <i>&</i> photography</span></h1>
+            <h1>Helen Parker<span id="bio">design <i>&</i> photography</span></h1>
             <ul>
               <li>+1-111-111-11-11</li>
-              <li>my-email@email.com</li>
+              <!-- <li>my-email@email.com</li> -->
               <li>my-site.com</li>
               </ul>
           </div>
@@ -25,22 +25,61 @@
         </div>
 </body>
 <script>
-    const requestUrl = 'https://api.github.com/users/devkaran-k'; 
-    const xhr = new XMLHttpRequest();
+    // const requestUrl = 'https://api.github.com/users/devkaran-k'; 
+    // const xhr = new XMLHttpRequest();
 
-    xhr.open('GET', requestUrl);
-    console.log(xhr);
-    console.log(xhr.onreadystatechange);
-    let data;
-    xhr.onreadystatechange = function(){
-        console.log(xhr.readyState);
-        if(xhr.readyState === 4){
-            console.table(this.responseText);
-            const data = JSON.parse(this.responseText);  // response come in string 
-            console.table(data.following);
+    // xhr.open('GET', requestUrl);
+    // console.log(xhr);
+    // console.log(xhr.onreadystatechange);
+    // let data;
+    // xhr.onreadystatechange = function(){
+    //     console.log(xhr.readyState);
+    //     if(xhr.readyState === 4){
+    //         console.table(this.responseText);
+    //         const data = JSON.parse(this.responseText);  // response come in string 
+    //         console.table(data.following);
+    //     }
+    // }
+
+    // xhr.send();
+    
+    async function catchDevkaran(){
+        try {
+            const token = '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';
+            const response = await fetch('https://api.github.com/users/devkaran-k', {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+
+            const  data = await response.json();
+            console.log(data);
+            console.log(data.bio);
+            console.log(data.avatar_url);
+            console.log(data.name);
+            console.log(data.company);
+            console.log(data.location);
+           
+            const logo = document.querySelector('.logo');
+            const name = document.querySelector('.back > h1').childNodes[0];
+            const bio = document.querySelector('#bio');
+            const company = document.querySelector('.back > ul > li:nth-child(2)');
+            const location = document.querySelector('.back > ul > li:nth-child(3)');
+
+
+   
+            logo.style.backgroundImage = `url(${data.avatar_url})`;
+            name.textContent = `${data.name}`;
+            company.innerHTML = `${data.company}`;
+            // location.innerHTML = `${data.location}`;
+            bio.innerHTML = `${data.bio}`;
+    }
+        catch(error){
+            // console.log('Error: ', error);
+            console.log('Error:', error.message);
+
         }
     }
-
-    xhr.send();
+    catchDevkaran();
 </script>
 </html>
