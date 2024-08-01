@@ -32,11 +32,11 @@ function User(userName, loginCount, signedIn){
     // return this;
 }
 
-const userOne =  new  User('Devkaran', 23, true);
-const userTwo = new   User('VijayRaj', 23, true);
-// userOne.greeting();
-// userTwo.greeting();
-// userOne.greeting();
+const userOne =   new  User('Devkaran', 23, true);
+const userTwo =  new    User('VijayRaj', 23, true);
+userOne.greeting();
+userTwo.greeting();
+userOne.greeting();
 console.log(userOne);
 console.log(userTwo);
 
@@ -52,8 +52,8 @@ function add(a, b){
     // return this;
 }
 
-const add1 = new add(56,56);
-const add2 = new add(1,2);
+const add1 =  add(56,56);
+const add2 =  add(1,2);
 
 console.log(add1);
 console.log(add2);
