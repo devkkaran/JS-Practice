@@ -12,7 +12,7 @@ const user = {
 }
 
 console.log(user.getUserDetails())
-console.log(user.userName)
+console.log(user.userNAame)
 
 
 // When We Use this in browser it gives context of global Windiw Object and gives Proprties and method
@@ -25,7 +25,7 @@ function User(userName, loginCount, signedIn){
     this.userName = userName;
     this.loginCount = loginCount;
     this.signedIn = signedIn
-    
+        // console.log(this)
     this.greeting = function(){
         console.log(`Welcom to ${this.userName}`);
     }
