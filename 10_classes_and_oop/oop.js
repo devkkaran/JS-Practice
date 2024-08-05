@@ -40,6 +40,8 @@ userOne.greeting();
 console.log(userOne);
 console.log(userTwo);
 
+console.log(userOne instanceof User);
+
 console.log("<-------------------- Constructor & Function are both same then why can't we do this with simple function ----------------------->");
 
 // In summary, use closures when you need encapsulation and private state. Use constructor functions and the new keyword when you need to create multiple instances with their own state and shared methods.
@@ -63,6 +65,7 @@ console.log(add2);
 
 console.log("<-------------------- ES6 Class: ----------------------->");
 class admin{
+    
     constructor(userName, loginCount, signedIn){
         this.userName = userName;
         this.loginCount = loginCount;

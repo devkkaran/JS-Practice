@@ -5,8 +5,9 @@ function setUsername(userName){
 }  
 
 function createUser(userName, email, password){
-    setUsername.call(this, userName);
+    // setUsername.call(this, userName);
     
+     new setUsername(userName);
     // execyte karine gayab that jaay che pn referebce hold nathi karta te karva .call()
     
     // this is global object
@@ -18,3 +19,11 @@ function createUser(userName, email, password){
 const chai = new createUser("Devkaran", "devkaran@gmail.com", "123");
 
 console.log(chai);
+
+
+checkwoThis = function(name, day){
+    name;
+    day;
+}
+
+console.log(checkwoThis);

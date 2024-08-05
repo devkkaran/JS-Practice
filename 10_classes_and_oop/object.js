@@ -35,7 +35,7 @@ createUser.prototype.printMe = function(){
 }
 
 const chai = new createUser("chai", 25);
-const tea = createUser("tea", 250);
+const tea = new createUser("tea", 250);
 
 chai.printMe();
 

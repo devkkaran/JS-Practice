@@ -66,7 +66,6 @@ Object.setPrototypeOf(Teacher, TeachingSupport);
 console.log(Teacher.isAvailable);
 
 
-
 let  anotherUsername = "Sainth Holidays      ";
 
 String.prototype.truelength = function(){
