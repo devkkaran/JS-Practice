@@ -1,4 +1,4 @@
-let score =  "Devkaran"
+let score =  undefined;
 
 
 let valueToNumber = Number (score)
@@ -15,8 +15,8 @@ console.log(valueToNumber)
 let valueTocheck = undefined
 
 let BooleanToCheck = Boolean (valueTocheck)
-// console.log(typeof BooleanToCheck)
-// console.log(BooleanToCheck)
+console.log(typeof BooleanToCheck)
+console.log(BooleanToCheck)
 
 // "Devkaran" => True
 // "33" => True
@@ -37,8 +37,8 @@ console.log("5" + 4 +3);
 
 // Increment Related How Post and Prefix operation works
 let a = 3
-// console.log(a++)
-// console.log(a)
+console.log(a++)
+console.log(a)
 let y = a++               // post increment operation
 console.log(a , y)
 

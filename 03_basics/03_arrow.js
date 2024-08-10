@@ -25,13 +25,13 @@ console.log(this); // empty string
 console.log("<-------------------- Variable Function ----------------------->");
 
 
-// const namePrint = function () {
-//     let userName = "Geeta";
-//     console.log(this.userName)  //undefined
-//     console.log(this);
-// }
+const namePrint1 = function () {
+    let userName = "Geeta";
+    // console.log(this.userName)  //undefined
+    console.log(this);
+}
 
-// namePrint();
+namePrint1();
 
 console.log("<-------------------- Arrow Function ----------------------->");
 const namePrint = () => {

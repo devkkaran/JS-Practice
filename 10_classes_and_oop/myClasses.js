@@ -1,5 +1,6 @@
-//ES 6
+console.log("<-------------------- 45 Class constructor and static  ----------------------->");
 
+//ES 6
 class User{
     constructor(userName, email, password){
         this.userName = userName;

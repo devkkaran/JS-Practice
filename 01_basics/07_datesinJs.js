@@ -2,15 +2,18 @@
 let myDate = new Date();
 
 console.log(myDate);
+console.log(typeof myDate);
 console.log(myDate.valueOf());
 
 
-// console.log(myDate.toString());
-// console.log(myDate.toDateString())
+console.log(myDate.toString());
+console.log(myDate.toDateString())
+console.log(myDate.toLocaleDateString())
+console.log(myDate.toLocaleString())
+console.log(myDate.toLocaleTimeString())
 console.log(typeof myDate.toLocaleString())
-console.log(myDate)
-// console.log(myDate.toString())
 
+// console.log(myDate.toString())
 
 let numberDate = new Date(2024, 12, 12);
 console.log(numberDate.toString());

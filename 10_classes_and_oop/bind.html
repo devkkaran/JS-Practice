@@ -1,38 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>React</title>
 </head>
+
 <body>
     <button>Button Clicked</button>
 </body>
 <script>
-    class React{
-        constructor(){
+    console.log("<-------------------- Event Handlers and Callback Fn: ----------------------->");
+    class React {
+        constructor() {
             this.library = "React";
             this.server = "https://localhost:300";
-
+            
             document
-                    .querySelector('button')
-                    .addEventListener('click', this.
-                    handleClick.bind(this))  
-                    // handleClick)  
-                    // handleClick())  
-                    
-                    // handleClick() karvathi te run thai jase  ane () na use karvathi click karvathi run thase
+            .querySelector('button')
+            .addEventListener('click', this.
+            handleClick.bind(this))
+            // handleClick)  
+            // handleClick())  
+
+            // handleClick() karvathi te run thai jase  ane () na use karvathi click karvathi run thase
 
         }
         // requirement
-        
-        handleClick(){
+
+        handleClick() {
             console.log("Button Clicked");
             console.log(this);
         }
     }
-
+    
     const app = new React();
-    app.handleClick();
+    // app.handleClick();
+    
+    
+    console.log("<-------------------- Event Handlers and Callback Fn: ----------------------->");
+    // When dealing with event handlers in a class or object method, bind() is often used to ensure the method has the correct this context.
+
+    const person = {
+        firstName: "Devkaran",
+        lastName: "Check",
+        display: function () {
+            console.log(this.firstName + " " + this.lastName);
+        }
+    }
+    
+    //Without Bind
+    
+    // person.display();
+    // setTimeout(person.display, 3000);
+    
+    //With Bind
+
+    const name = person.display.bind(person);
+    setTimeout(name, 6000);
+    
+    console.log("<-------------------- Explaination Of why bind is IMP ----------------------->");
+    const module = {
+        x: 42,
+        getX: function () {
+            return this.x;
+        },
+    };
+
+    const unboundGetX = module.getX;
+    console.log(unboundGetX()); // The function gets invoked at the global scope
+    // Expected output: undefined
+
+    const boundGetX = unboundGetX.bind(module);
+    console.log(boundGetX());
+    // Expected output: 42
+
+    console.log("<-------------------- Currying: ----------------------->");
+    console.log("<-------------------- Currying Ex:1 ----------------------->");
+    // You can use bind() to create partially applied functions for more specialized use cases.
+
+    function multiply(a, b) {
+        return a * b;
+    }
+    
+    const double = multiply.bind(null, 2);
+    console.log(double(5)); // Output: 10
+    
+    console.log("<-------------------- Currying Ex:2 ----------------------->");
+    
+    
+    function greetWithContext(greeting, name) {
+        console.log(`${greeting}, ${name}`);
+    }
+
+    const greetAlice = greetWithContext.bind(null, 'Hello');
+    greetAlice('Devraaj'); // Output: Hello, Alice
 </script>
+
 </html>

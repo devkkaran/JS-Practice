@@ -1,5 +1,6 @@
-// Prototype Inheritance
+console.log("<-------------------- 43 Magic of Prototype  ----------------------->");
 
+// Prototype Inheritance
 // direct String & Object ni add method
 
 // be Object ma 1 object bija object ni method and property use karta sikhya

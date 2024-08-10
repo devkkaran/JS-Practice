@@ -39,9 +39,8 @@ promiseThree.then(function (user){
 
 // console.log("<--------------------4th Promise Object ----------------------->");
 const promiseFour = new Promise((resolve, reject) => {
-    let error = true;
-    
-    setTimeout(function(){
+    let error = false;
+    checkfn = function(){
         if(!error){
             resolve({userName: 'Vijayrag 4', password: 5555});
         }
@@ -49,7 +48,8 @@ const promiseFour = new Promise((resolve, reject) => {
             reject('Error: Something Went Wrong 4');
         }
         
-    }, 3000)
+    }
+    setTimeout(checkfn, 3000)
     console.log('check 4');
 })
 
@@ -124,7 +124,7 @@ catch(error){
 // getUserAll();
 
 // console.log("<-------------------- Async with Fetch, then & Catch ----------------------->");
-fetch('https://api.github.com/users/hiteshchoudhary')
+fetch('https://api.github.com/user/hiteshchoudhary')
 .then((response) => {
     
     return response.json()

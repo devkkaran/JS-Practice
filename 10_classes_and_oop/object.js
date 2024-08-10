@@ -1,3 +1,6 @@
+// console.log("<-------------------- 43 Magic of Prototype  ----------------------->");
+
+
 // Learning:
 
 // new 
