@@ -103,13 +103,13 @@ let mapBooks = books.map(
   
   console.log(mapBooks);
   
-  //   filterBooks = books.filter(
-//       (name) => {
-//           return name.genre == "History" || name.genre == "Science";
-//         }
-//     )
+    filterBooks = books.filter(
+      (name) => {
+          return name.genre == "History" || name.genre == "Science";
+        }
+    )
 
-//     console.log(filterBooks);
+    console.log(filterBooks);
 
     
     

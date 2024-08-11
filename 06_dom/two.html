@@ -22,6 +22,7 @@
     console.log(parent);
     console.log(parent.innerHTML);
     console.log(parent.children);
+    console.log(parent.childNodes);
     console.log(parent.style.color = "yellow");
 
     // const classParent = document.getElementsByClassName('parent');
@@ -34,15 +35,23 @@
         console.log(parent.children[i]);
     }
 
-    // console.log(parent.firstElementChild);
-    // console.log(parent.lastElementChild);
-    // console.log(day.secondElementSibling);
-
+    console.log('<-------------------------- Child Element ----------------------->')
+    
+    console.log(parent.secondElementChild);
+    console.log(parent.firstElementChild);
+    console.log(parent.lastElementChild); // Not Work
+    // console.log(parent.thirdElementChild); // Not Work
+    
+    console.log('<-------------------------- Parent Element ----------------------->')
     const day = document.querySelector(".day");
     console.log(day.parentElement);
     console.log(day.parentNode);
+
+
+    console.log('<-------------------------- Sibling Element ----------------------->')
     console.log(day.nextElementSibling);
-    console.log(day);
+    console.log(day.secondElementSibling);
+    console.log(day.previousElementSibling);
 
 
     // console.log("Nodes: ", parent.childNodes);
