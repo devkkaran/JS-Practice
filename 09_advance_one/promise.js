@@ -140,9 +140,16 @@ fetch('https://api.github.com/user/hiteshchoudhary')
 
 // Function that simulates fetching data with a delay
 async function fetchData() {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
+        let check = false;
+        if(check){
         setTimeout(() => resolve("Fetched Data"), 2000);
-    });
+        }
+        else{
+            reject("Checking of Reject")
+        }
+    })
+
 }
 
 // Async function using await to handle the promise

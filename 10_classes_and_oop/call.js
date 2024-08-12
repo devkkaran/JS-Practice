@@ -57,7 +57,7 @@ const obj3 = {
     
 }
 
-// console.log(obj1.printFullName.call(obj2));
+console.log(obj1.printFullName.call(obj2));
 const checkBind = obj1.printFullName.bind(obj2);
 console.log(checkBind());
 

@@ -14,22 +14,22 @@
 <script>
 
     // Lexical Scoping
-    // function outer() {
-    //     let userName = 'suresh';
+    function outer() {
+        let userName = 'suresh';
 
-    //     function inner() {
-    //         console.log("Inner", userName);
-    //         let secret = "my123"
-    //     }
+        function inner() {
+            console.log("Inner", userName);
+            let secret = "my123"
+        }
 
-    //     function innerTwo() {
-    //         console.log("Inner Two", userName);
-    //         console.log(secret);
+        function innerTwo() {
+            console.log("Inner Two", userName);
+            console.log(secret);
 
-    //     }
-    //     inner();
-    //     innerTwo();
-    // }
+        }
+        inner();
+        innerTwo();
+    }
 
     // outer();
     // console.log(userName);
@@ -44,28 +44,29 @@
         // return displayName; // refrence
     }
 
-    // const myFunc = makeFunc();
+    const myFunc = makeFunc;
 
-    makeFunc();
-    // myFunc();
+    myFunc();
+    // makeFunc();
     // displayName();
 </script>
 <script>
-    // document.getElementById('orange').onclick = function(){
-    //     document.body.style.backgroundColor = 'orange';
-    // }
-    // document.getElementById('green').onclick = function(){
-    //     document.body.style.backgroundColor = 'green';
-    // }
+    document.getElementById('orange').onclick = function(){
+        document.body.style.backgroundColor = 'orange';
+    }
+    document.getElementById('green').onclick = function(){
+        document.body.style.backgroundColor = 'green';
+    }
 
     function clickHandler(color) {
-        return function() {
+        return function () {
             document.body.style.backgroundColor = `${color}`;
         }
     }
 
     document.getElementById('orange').onclick = clickHandler('orange');
     document.getElementById('green').onclick = clickHandler('green');
+
 </script>
 
 </html>

@@ -24,7 +24,7 @@ console.log(keshav.logMe());  // because we already use console.log in funcion a
 keshav.logMe()
 
 
-class Teacher extends User{
+class Teacher extends User {
     constructor(username, email){
         super(username);
         this.email = email;

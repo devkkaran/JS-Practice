@@ -12,7 +12,7 @@
             <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
             <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
             <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
-            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-ry3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="owl" src="https://cdn.cdnparenting.com/articles/2021/03/12132308/Artical-draw-OWl_6.webp" alt="" ></li>
             <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
             <li><a style="color: aliceblue;" href="https://google.com" id="google" onclick="one(event)">Google</a></li>
         </ul>
@@ -30,12 +30,12 @@
 
     // check();
 
-    function one(e){
-        e.preventDefault();
+    function one(elink){
+        elink.preventDefault();
         console.log('one');
     }
     
-    const two = function (){
+    const two = function (){ 
         console.log('two');
     }
     const three = () => {
@@ -50,17 +50,17 @@
      // attachEvent()
     // jQuery - on
     document.getElementById('images').addEventListener('click', function(e){
-        // console.log('Click inside ul');
-    }, false)
+        console.log('Click inside ul');
+    })
 
 
     document.getElementById('owl').addEventListener('click', function(e){
         console.log('Owl clicked');
-        // console.log(e);   // poiner event
-        // console.log(e.timeStamp);
-        // console.log(e.target);          //HTML tag element
+        console.log(e);   // poiner event
+        console.log(e.timeStamp);
+        console.log(e.target);          //HTML tag element
         // e.stopPropagation();         
-    }, false)
+    })
 
 
 
@@ -69,18 +69,18 @@
     // clientX, clientY, screenX, screenY56 
     // altkey, ctrlkey, shiftkey, keyCode
 
-    document.querySelector('#images').addEventListener('click', function(e){
-        console.log(e);
+    // document.querySelector('#images').addEventListener('click', function(e){
+    //     console.log(e);
         
-        if(e.target.tagName === 'IMG'){
-            let removeIt = e.target.parentElement;
-            removeIt.remove();
-            console.log(removeIt);
-        }
-        // removeIt.parentNode.removeChild(removeIt)  // this is different way
+    //     if(e.target.tagName === 'IMG'){
+    //         let removeIt = e.target.parentElement;
+    //         removeIt.remove();
+    //         console.log(removeIt);
+    //     }
+    //     // removeIt.parentNode.removeChild(removeIt)  // this is different way
         
 
-    })
+    // })
     
     
 </script>
