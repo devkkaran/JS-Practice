@@ -18,3 +18,5 @@ const User = {
 const tea = Object.create(User);
 console.log(tea._email);
 console.log(tea.email);
+console.log(User._email);
+console.log(User.email);

@@ -40,12 +40,13 @@
         function displayName() {
             console.log(name);
         }
-        return displayName();
-        // return displayName; // refrence
+        // return displayName();
+        return displayName; // refrence
     }
-
     const myFunc = makeFunc;
+    // const myFunc = makeFunc();
 
+    
     myFunc();
     // makeFunc();
     // displayName();
