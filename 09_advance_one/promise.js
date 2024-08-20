@@ -1,4 +1,4 @@
-// console.log("<-------------------- PromiseOne Object ----------------------->");
+// console.log("<-------------------- Promise One Object ----------------------->");
 
 const promiseOne = new Promise(function(resolve, reject){
     setTimeout(function(){
@@ -53,9 +53,19 @@ const promiseFour = new Promise((resolve, reject) => {
     console.log('check 4');
 })
 
+const promiseTen = new Promise((resolve, reject) => {
+    let error = true;
+    checkFunction = function(){
+        if (error){
+            resolve({name: 'geetaben', passcode: 789789});
+        }
+        else{
+            reject('Error: checking of practise')
+        }
+    }
 
-
-
+    setTimeout(checkFunction, 6000)
+})
 
 
 
@@ -149,7 +159,6 @@ async function fetchData() {
             reject("Checking of Reject")
         }
     })
-
 }
 
 // Async function using await to handle the promise
