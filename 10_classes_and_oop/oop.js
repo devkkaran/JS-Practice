@@ -14,7 +14,6 @@ const user = {
 console.log(user.getUserDetails())
 console.log(user.userNAame)
 
-
 // When We Use this in browser it gives context of global Windiw Object and gives Proprties and method
 console.log(this);
 
@@ -70,8 +69,6 @@ class admin{
         this.userName = userName;
         this.loginCount = loginCount;
         this.signedIn = signedIn;
-
-
     }
     getUserDetails(){
             console.log(`Username ES6: ${this.userName}`);

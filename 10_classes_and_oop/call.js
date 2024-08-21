@@ -33,11 +33,10 @@ chai.greeting(); // write this is extends for function constructor
 console.log(chai);
 
 
-checkwoThis = function(name, day){
-    name;
-    day;
+let checkwoThis = function(name, day){
+    console.log(name, day);
 }
-console.log(checkwoThis('dev', 6));
+checkwoThis('dev', 6);
 
 console.log("<-------------------- Object Literal ----------------------->");
 // Use Of Call() method in Object Literal

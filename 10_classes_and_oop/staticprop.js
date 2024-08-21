@@ -38,3 +38,31 @@ const iphone = new Teacher('Iphone', "i@gmail.com")
 // console.log(iphone.creatId());  // can't Use
 console.log(Teacher.creatId()); // Use
 console.log(User.creatId());
+
+class MyClass {
+    constructor(name) {
+      this.name = name; // Instance property
+    }
+  
+    greet() {
+      console.log(`Hello, my name is ${this.name}.`);
+    }
+  
+    // Static method
+    static describeInstance(instance) {
+      console.log(`This instance's name is: ${instance.name}`);
+    }
+  }
+  
+  // Creating instances of the class
+  const obj1 = new MyClass("Alice");
+  const obj2 = new MyClass("Bob");
+  
+  // Accessing instance properties through a static method
+  MyClass.describeInstance(obj1); // Output: This instance's name is: Alice
+  MyClass.describeInstance(obj2); // Output: This instance's name is: Bob
+  
+  // Using instance methods
+  obj1.greet(); // Output: Hello, my name is Alice.
+  obj2.greet(); // Output: Hello, my name is Bob.
+  
