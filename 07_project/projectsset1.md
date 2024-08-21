@@ -5,18 +5,16 @@
 
 # Solution code
 
-## Project 1
-
+## Project 1 `Color Scheme Switcher`
+### Original Code
 ```javascript
-console.log("hitesh")
-const buttons = document.querySelectorAll('.button');
-const body = document.querySelector('body');
+let buttons = document.querySelectorAll('.button');
+// let body = document.body;
+let body = document.querySelector('body');
+console.log(buttons);
 
 buttons.forEach(function (button) {
-  console.log(button);
   button.addEventListener('click', function (e) {
-    console.log(e);
-    console.log(e.target);
     if (e.target.id === 'grey') {
       body.style.backgroundColor = e.target.id;
     }
@@ -29,14 +27,30 @@ buttons.forEach(function (button) {
     if (e.target.id === 'yellow') {
       body.style.backgroundColor = e.target.id;
     }
-    
   });
 });
 
 
-```
 
-## project 2 solution
+```
+### My Code
+
+```
+let buttons = document.querySelectorAll('.button');
+console.log(buttons);
+
+buttons.forEach(function (button) {
+  button.addEventListener('click', function (e) {
+    let colorcode = e.target.id;
+    console.log(colorcode);
+
+    document.body.style.backgroundColor = `${colorcode}`;
+  });
+});
+
+```
+## Project 2  ``BMI Calculator``
+### Original Code
 
 ```javascript
 const form = document.querySelector('form');
@@ -63,7 +77,35 @@ form.addEventListener('submit', function (e) {
 
 
 ```
+### My Code
 
+```
+const form = document.querySelector('form');
+const data = function (event) {
+  return function (event) {
+    event.preventDefault();
+
+    const height = parseInt(document.querySelector('#height').value);
+    const weight = parseInt(document.querySelector('#weight').value);
+    console.log(typeof weight);
+
+    if (height < 0 || height === '' || isNaN(height)) {
+      document.querySelector('#results').innerHTML =
+        'Please Enter Valid Height Value';
+    } else if (weight < 0 || weight === '' || isNaN(weight)) {
+      document.querySelector('#results').innerHTML =
+        'Please Enter Valid Weight Value';
+    } else {
+      const bmi = (weight / ((height * height) / 10000)).toFixed(2);
+      document.querySelector('#results').innerHTML = `<span>${bmi}</span>`;
+    }
+  };
+};
+
+form.addEventListener('submit', data); // We  Can use like this or here we use return function
+form.addEventListener('submit', data());
+
+```
 ## project 3 solution code
 
 ```javascript
