@@ -78,6 +78,7 @@ form.addEventListener('submit', function (e) {
 
 ```
 ### My Code
+
 ```
 const form = document.querySelector('form');
 const data = function (event) {
