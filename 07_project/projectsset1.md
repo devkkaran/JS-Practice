@@ -5,7 +5,7 @@
 
 # Solution code
 
-## Project 1
+## Project 1 `Color Scheme Switcher`
 ### Original Code
 ```javascript
 let buttons = document.querySelectorAll('.button');
@@ -49,7 +49,8 @@ buttons.forEach(function (button) {
 });
 
 ```
-## project 2 solution
+## Project 2  ``BMI Calculator``
+### Original Code
 
 ```javascript
 const form = document.querySelector('form');
@@ -76,7 +77,34 @@ form.addEventListener('submit', function (e) {
 
 
 ```
+### My Code
+```
+const form = document.querySelector('form');
+const data = function (event) {
+  return function (event) {
+    event.preventDefault();
 
+    const height = parseInt(document.querySelector('#height').value);
+    const weight = parseInt(document.querySelector('#weight').value);
+    console.log(typeof weight);
+
+    if (height < 0 || height === '' || isNaN(height)) {
+      document.querySelector('#results').innerHTML =
+        'Please Enter Valid Height Value';
+    } else if (weight < 0 || weight === '' || isNaN(weight)) {
+      document.querySelector('#results').innerHTML =
+        'Please Enter Valid Weight Value';
+    } else {
+      const bmi = (weight / ((height * height) / 10000)).toFixed(2);
+      document.querySelector('#results').innerHTML = `<span>${bmi}</span>`;
+    }
+  };
+};
+
+form.addEventListener('submit', data); // We  Can use like this or here we use return function
+form.addEventListener('submit', data());
+
+```
 ## project 3 solution code
 
 ```javascript
