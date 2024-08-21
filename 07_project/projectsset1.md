@@ -5,18 +5,16 @@
 
 # Solution code
 
-## project 1
-
+## Project 1
+### Original Code
 ```javascript
-console.log("hitesh")
-const buttons = document.querySelectorAll('.button');
-const body = document.querySelector('body');
+let buttons = document.querySelectorAll('.button');
+// let body = document.body;
+let body = document.querySelector('body');
+console.log(buttons);
 
 buttons.forEach(function (button) {
-  console.log(button);
   button.addEventListener('click', function (e) {
-    console.log(e);
-    console.log(e.target);
     if (e.target.id === 'grey') {
       body.style.backgroundColor = e.target.id;
     }
@@ -29,13 +27,28 @@ buttons.forEach(function (button) {
     if (e.target.id === 'yellow') {
       body.style.backgroundColor = e.target.id;
     }
-    
   });
 });
 
 
-```
 
+```
+### My Code
+
+```
+let buttons = document.querySelectorAll('.button');
+console.log(buttons);
+
+buttons.forEach(function (button) {
+  button.addEventListener('click', function (e) {
+    let colorcode = e.target.id;
+    console.log(colorcode);
+
+    document.body.style.backgroundColor = `${colorcode}`;
+  });
+});
+
+```
 ## project 2 solution
 
 ```javascript
