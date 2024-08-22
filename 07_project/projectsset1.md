@@ -138,8 +138,8 @@ const time = setInterval(function () {
 
 
 ```
-## project 4 solution
-
+## Project 4  ``Guess the number 🤨``
+### Original Code
 
 ```javascript
 
@@ -239,3 +239,112 @@ function newGame() {
 
 ```
 
+### My Code
+
+```
+const randomNumber = parseInt(Math.random() * 100 + 1);
+console.log(randomNumber);
+
+const guessField = document.querySelector('#guessField');
+const subt = document.querySelector('#subt');
+const guessSlot = document.querySelector('.guesses');
+const remaining = document.querySelector('.lastResult');
+const lowOrHi = document.querySelector('.lowOrHi');
+const resultParas = document.querySelector('.resultParas');
+const p = document.createElement('p');
+let playGame = true;
+let numGuess = 1;
+let value = [];
+if (true) {
+  subt.addEventListener('click', function (e) {
+    e.preventDefault();
+    const guess = guessField.value;
+    console.log(typeof guess);
+    validateGuess(guess);
+  });
+}
+function validateGuess(guess) {
+  if (guess < 1 || isNaN(guess) || guess > 100) {
+    alert('Please Enter Valid Value');
+  } else if (numGuess === 11) {
+    displayMsg('Your 10 Round is Complete');
+    cleanUpguess(guess);
+    endGame();
+  } else {
+    checkGuess(guess);
+    cleanUpguess(guess);
+  }
+}
+function checkGuess(guess) {
+  if (guess === randomNumber) {
+    displayMsg('WINNER WINNER CHICKEN DINNER!!!');
+  } else if (guess < randomNumber) {
+    displayMsg('Your Number Is TOO Low!');
+  } else if (guess > randomNumber) {
+    displayMsg('Your Number is Too High');
+  }
+}
+function cleanUpguess(guess) {
+  guessField.value = '';
+  // guessSlot.innerHTML += guess + '';
+  value.push(guess);
+  guessSlot.innerHTML = value;
+  numGuess++;
+  remaining.innerHTML = `${11 - numGuess}`;
+}
+
+function endGame() {
+  guessField.setAttribute('disabled', '');
+  p.innerHTML = '<h2> Start New Game</h2>';
+  resultParas.appendChild(p);
+  p.classList.add('button');
+  console.log(p.classList);
+  newGame();
+}
+
+function displayMsg(text) {
+  lowOrHi.innerHTML = `<h2> ${text} </h2>`;
+}
+
+function newGame() {
+  p.addEventListener('click', function (e) {
+    guessField.removeAttribute('disabled');
+    value = [];
+    numGuess = 1;
+    guessSlot.innerHTML = '';
+    remaining.innerHTML = 10;
+  });
+}
+
+
+
+```
+
+
+## Project 4  ``Keyboard check 👻``
+
+```javascript
+window.addEventListener('keydown', function (e) {
+  const key = document.querySelector('.key');
+  key.innerHTML = `
+  <table>
+  <tr> 
+  <th>Key</th>
+  <th>KeyCode</th>
+  <th>Code</th>
+  </tr>
+  <tr> 
+  <td>${e.key === ' ' ? 'Space' : e.key}</td>
+  <td>${e.keyCode}</td>
+  <td>${e.code}</td>
+  </tr>
+
+  </table>
+  `;
+
+  console.log(e);
+});
+
+
+
+```
