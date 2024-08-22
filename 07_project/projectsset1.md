@@ -5,7 +5,7 @@
 
 # Solution code
 
-## Project 1 `Color Scheme Switcher`
+## Project 1 `Color Scheme Switcher 🔥`
 ### Original Code
 ```javascript
 let buttons = document.querySelectorAll('.button');
@@ -49,7 +49,7 @@ buttons.forEach(function (button) {
 });
 
 ```
-## Project 2  ``BMI Calculator``
+## Project 2  ``BMI Calculator ☕️``
 ### Original Code
 
 ```javascript
@@ -106,7 +106,8 @@ form.addEventListener('submit', data); // We  Can use like this or here we use r
 form.addEventListener('submit', data());
 
 ```
-## project 3 solution code
+## Project 3  ``Digital clock 😎``
+### Original Code
 
 ```javascript
 const clock = document.getElementById('clock');
@@ -120,7 +121,23 @@ setInterval(function () {
 
 
 ```
+### My Code
 
+```
+const clock = document.getElementById('clock');
+console.log(clock);
+
+// In JavaScript, when you use the setInterval() function, it returns a unique identifier, commonly referred to as the "interval ID." This ID is a number that represents the specific interval you’ve created. You can use this ID to manage the interval, such as clearing it if you want to stop the repeated execution of the function.
+
+const time = setInterval(function () {
+  const date = new Date();
+  clock.innerHTML = date.toLocaleTimeString();
+}, 1000);
+
+// clearInterval(time);
+
+
+```
 ## project 4 solution
 
 
