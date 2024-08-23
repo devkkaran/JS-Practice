@@ -156,3 +156,31 @@ async function getData() {
 }
 
 getData(); // Calls the async function
+
+
+async function fetchError() {
+    try {
+        const response = await fetch('https://api.github.com/user/hiteshchoudhar');
+        
+        if (!response.ok) {
+            // Manually throw an error if the response is not successful
+            throw new Error('Not Work!!!!!!!');
+        }
+        
+        const getData = await response.json();
+        console.log(getData);
+    } catch (error) {
+        // Re-throw the error to be caught in the calling function
+        throw error;
+    }
+}
+
+async function checkError() {
+    try {
+        await fetchError();
+    } catch (error) {
+        console.log(error.message); // This will print 'Not Work!!!!!!!'
+    }
+}
+
+checkError();

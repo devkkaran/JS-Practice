@@ -1,12 +1,16 @@
 const coding = ["js", "ruby", "java", "python", "cpp"];
 const testNum = [1, 23, 56, 89, 78];
 
-testNum.forEach((num) => {
-    console.log(num > 5);
+const checkValue = testNum.forEach((num) => {
+    // console.log(num > 5);
+    return num > 5
 })
+
+console.log(checkValue);
 
 coding.forEach((name) => {
     console.log(name);
+    // return name;
 })
 
 coding.forEach( function (item){
