@@ -1,6 +1,6 @@
 let myArray = [0,1,2,3,4,5];
 
-myArray.push("Hitesh");
+console.log(myArray.push("Hitesh"));
 // myArray.pop();
 // myArray.unshift(12);
 myArray.shift();

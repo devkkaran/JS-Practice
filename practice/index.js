@@ -87,29 +87,29 @@ console.log(
 console.log("1342. Number of Steps to Reduce a Number to Zero");
 
 let numberOfSteps = function (num) {
-    let value;
-  
-    let valueArray = [];
-    do {
-      if (num % 2 == 0) {
-        value = num / 2;
-        valueArray.push(value);
-      } else {
-        value = --num;
-        valueArray.push(value);
-      }
-      num = value;
-  
-      console.log(value);
-    } while (value > 0);
-  
-    console.log(valueArray.length);
-    // return  valueArray.length;
-  };
+  let value;
+
+  let valueArray = [];
+  do {
+    if (num % 2 == 0) {
+      value = num / 2;
+      valueArray.push(value);
+    } else {
+      value = --num;
+      valueArray.push(value);
+    }
+    num = value;
+
+    console.log(value);
+  } while (value > 0);
+
+  console.log(valueArray.length);
+  // return  valueArray.length;
+};
 
 //   let numberOfSteps = function(num) {
 //     let steps = 0;
-  
+
 //     while (num > 0) {
 //       if (num % 2 === 0) {
 //         num /= 2;  // If even, divide by 2
@@ -118,24 +118,99 @@ let numberOfSteps = function (num) {
 //       }
 //       steps++;  // Count each step
 //     }
-  
+
 //     return steps;
 //   };
-  
-  console.log(numberOfSteps(7));   // Output: 4
-  console.log(numberOfSteps(641)); // Output: 10
-  console.log(numberOfSteps(8));   // Output: 4
-  console.log(numberOfSteps(123)); // Output: 12
-  console.log(numberOfSteps(14));  // Output: 6
 
-  console.log("learn lexical scope");
-  const check = numberOfSteps(10);
-  console.log(check);
+console.log(numberOfSteps(7)); // Output: 4
+console.log(numberOfSteps(641)); // Output: 10
+console.log(numberOfSteps(8)); // Output: 4
+console.log(numberOfSteps(123)); // Output: 12
+console.log(numberOfSteps(14)); // Output: 6
 
-  const check1 = numberOfSteps;
-  check1(15)
+console.log("learn lexical scope");
+const check = numberOfSteps(10);
+console.log(check);
 
+const check1 = numberOfSteps;
+check1(15);
 
+console.log(
+  "<-------------------- 876. Middle of the Linked List ----------------------->"
+);
+console.log("876. Middle of the Linked List");
 
+var middleNode = function (head) {
+  let middleLinkedlist = [];
 
+  let arrayLength = head.length;
+  console.log(arrayLength);
 
+  let middleValue = Math.floor(arrayLength / 2);
+  console.log(middleValue);
+
+  for (const key in head) {
+    if (key >= middleValue) {
+      middleLinkedlist.push(head[key]);
+
+      console.log(key);
+    }
+  }
+
+  return middleLinkedlist;
+  // console.log(typeof middleLinkedlist);
+};
+
+head = [1, 2, 3, 4, 5, 6];
+head1 = [11, 12, 13, 14, 15];
+//  middleNode(head);
+console.log(middleNode(head));
+console.log(middleNode(head1));
+
+var middleNode1 = function (head) {
+  let middleValue = Math.floor(head.length / 2);
+  return head.slice(middleValue);
+};
+
+let head2 = [21, 22, 23, 24, 25];
+console.log(middleNode1(head2));
+
+console.log("<-------------------- 383. Ransom Note ----------------------->");
+console.log("383. Ransom Note");
+
+var canConstruct = function (ransomNote, magazine) {
+  ransomNote = Array.from(ransomNote.toLowerCase());
+  magazine = Array.from(magazine.toLowerCase());
+  for (let key of ransomNote) {
+    if (magazine.includes(key) == false) {
+      return false;
+    } else {
+      let index = magazine.indexOf(key);
+
+      //  console.log(magazine.splice(index, 1));
+      magazine.splice(index, 1);
+      // console.log(magazine);
+    }
+  }
+
+  return true;
+};
+
+console.log(canConstruct("asd", "sad"));
+console.log(canConstruct("ert1", "ert1"));
+console.log(canConstruct("asdf", "ghjk"));
+console.log(canConstruct("aaasw", "wsa"));
+console.log(canConstruct("12qw", "QW21"));
+
+// console.log(canConstruct('deva', 'eva'));
+
+// function canConstruct(ransomNote, magazine) {
+//   for (let char of ransomNote) {
+//       if (magazine.includes(char)) {
+//           magazine = magazine.replace(char, ''); // Remove the character once it's used
+//       } else {
+//           return false;
+//       }
+//   }
+//   return true;
+// }
