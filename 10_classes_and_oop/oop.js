@@ -25,17 +25,19 @@ function User(userName, loginCount, signedIn){
     this.loginCount = loginCount;
     this.signedIn = signedIn
         // console.log(this)
-    this.greeting = function(){
+    this.greeting = function(check){
         console.log(`Welcom to ${this.userName}`);
+        console.log(check);
+        
     }
     // return this;
 }
 
 const userOne =   new  User('Devkaran', 23, true);
 const userTwo =  new    User('VijayRaj', 23, true);
-userOne.greeting();
-userTwo.greeting();
-userOne.greeting();
+userOne.greeting('shamma');
+userTwo.greeting('hey ye shamma');
+userOne.greeting('Eye of the tiger');
 console.log(userOne);
 console.log(userTwo);
 

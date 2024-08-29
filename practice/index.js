@@ -214,3 +214,132 @@ console.log(canConstruct("12qw", "QW21"));
 //   }
 //   return true;
 // }
+
+var createHelloWorld = function () {
+  return function (...args) {
+    console.log("Hello World");
+  };
+};
+
+const greeting = createHelloWorld();
+greeting([{}, null, 42]);
+
+console.log(
+  "<-------------------- 2704. To Be Or Not To Be ----------------------->"
+);
+console.log("2704. To Be Or Not To Be");
+
+var expect = function (val) {
+  return function toBe(anotherVal) {
+    const Obj = {};
+    let key;
+    let Value;
+    if (val === anotherVal) {
+      key = "value";
+      Value = true;
+      Obj[key] = Value;
+
+      return Obj;
+    } else {
+      // return "Not Equal";
+      // key = "Not Equal";
+      // console.log(key);
+
+      key = "error";
+      Value = "Not Equal";
+      Obj[key] = Value;
+      return Obj;
+    }
+  };
+
+  return function notToBe(anotherVal) {
+    if (val !== anotherVal) {
+      // return true;
+      // Value = "true";
+      // console.log(Value);
+
+      key = "value";
+      Value = true;
+      Obj[key] = Value;
+
+      return Obj;
+    } else {
+      key = "error";
+      Value = "Equal";
+      Obj[key] = Value;
+
+      return Obj;
+    }
+  };
+};
+
+// console.log(expect(5).toBe(5));
+
+const toBe1 = expect("asd");
+// const notToBe1 = expect(5);
+
+console.log(toBe1(5));
+// console.log(notToBe1(5));
+// console.log(notToBe1('Fakir'));
+
+// console.log(expect("Ramadhir Singh").toBe(5));
+// console.log(expect(5).notToBe(5));
+
+var expect2 = function (val) {
+  return {
+    // function toBe(anotherVal) {
+    toBe: function (anotherVal) {
+      if (val === anotherVal) {
+        return true;
+      } else {
+        throw new Error("Not Equal");
+      }
+    },
+
+    notToBe: function (anotherVal) {
+      if (val !== anotherVal) {
+        return true;
+      } else {
+        throw new Error("Equal");
+      }
+    },
+  };
+
+};
+
+console.log(expect(1));
+
+console.log(expect1("Ramadhir Singh").toBe(5));
+console.log(expect1(5).notToBe(5));
+console.log(expect1(1).toBe("lsd"));
+
+var expect1 = function (val) {
+  return {
+    toBe: function (anotherVal) {
+      if (val === anotherVal) {
+        return true;
+      } else {
+        throw new Error("Not Equal");
+      }
+    },
+    notToBe: function (anotherVal) {
+      if (val !== anotherVal) {
+        return true;
+      } else {
+        throw new Error("Equal");
+      }
+    },
+  };
+};
+
+try {
+  console.log(expect1(5).toBe(5)); // Output: true
+} catch (error) {
+  console.log(error);
+}
+
+try {
+  console.log(expect1(5).notToBe(5)); // This will throw an error
+} catch (error) {
+  console.error(error.message); // Output: "Error in notToBe: Equal"
+}

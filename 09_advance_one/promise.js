@@ -179,7 +179,7 @@ async function checkError() {
     try {
         await fetchError();
     } catch (error) {
-        console.log(error.message); // This will print 'Not Work!!!!!!!'
+        console.log('Dev', error.message); // This will print 'Not Work!!!!!!!'
     }
 }
 
