@@ -20,7 +20,7 @@ console.log(coding);
 const myNums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const graterthanFour = myNums.forEach((myNum) => {
-  return myNum;
+  return myNum > 4;
 });
 
 console.log(graterthanFour);
@@ -38,10 +38,13 @@ let newArray = [];
 const donewithForEach = myNums.forEach((number) => {
   if (number > 4) {
     newArray.push(number);
+    console.log(newArray);
   }
 });
 
+
 console.log(newArray);
+console.log(donewithForEach);
 
 const books = [
   { title: "Book One", genre: "Fiction", publish: 1981, edition: 2004 },

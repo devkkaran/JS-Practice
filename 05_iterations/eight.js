@@ -11,10 +11,9 @@ const myTotal = myNums.reduce(
 
 const total = myNums.reduce(
     (acc, curVal) => (acc + curVal)
-    ,0)
+    ,100)
 
 console.log(total);
-
 
 const course = [
     {

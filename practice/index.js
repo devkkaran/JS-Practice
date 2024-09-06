@@ -304,14 +304,13 @@ var expect2 = function (val) {
       }
     },
   };
-
 };
 
 console.log(expect(1));
 
-console.log(expect1("Ramadhir Singh").toBe(5));
-console.log(expect1(5).notToBe(5));
-console.log(expect1(1).toBe("lsd"));
+// console.log(expect1("Ramadhir Singh").toBe(5));
+// console.log(expect1(5).notToBe(5));
+// console.log(expect1(1).toBe("lsd"));
 
 var expect1 = function (val) {
   return {
@@ -335,7 +334,7 @@ var expect1 = function (val) {
 try {
   console.log(expect1(5).toBe(5)); // Output: true
 } catch (error) {
-  console.log(error);
+  console.error(error);
 }
 
 try {
@@ -343,3 +342,248 @@ try {
 } catch (error) {
   console.error(error.message); // Output: "Error in notToBe: Equal"
 }
+
+console.log("<-------------------- 2665. Counter II ----------------------->");
+console.log("2665. Counter II");
+
+let createCounter = function (init) {
+  let value = init;
+  return {
+    increment: function () {
+      return ++value;
+      // console.log(++value);
+    },
+    reset: function () {
+      value = init;
+      return value;
+    },
+    decrement: function () {
+      return --value;
+    },
+    // return increment;
+    // return reset;
+    // return decrement;
+  };
+};
+
+const counter = createCounter(5);
+console.log(counter.increment()); // 6
+counter.reset(); // 5
+// console.log(counter.reset()); // 5
+console.log(counter.decrement()); // 4
+
+console.log(createCounter(10).increment());
+
+console.log(
+  "<-------------------- 2635. Apply Transform Over Each Element in Array ----------------------->"
+);
+console.log("2635. Apply Transform Over Each Element in Array");
+
+var map = function (arr, fn, index = 0) {
+  function plusone(n) {
+    return n + 1;
+  }
+
+  function plusI(n, index) {
+    return n + index;
+  }
+
+  function constant() {
+    return 42;
+  }
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (fn == "plusone") {
+      result.push(plusone(arr[i], i));
+    } else if (fn == "plusI") {
+      result.push(plusI(arr[i], index));
+    } else {
+      result.push(constant(arr[i]));
+    }
+  }
+  2;
+  return result;
+};
+
+mapArray = [1, 2, 3, 4];
+console.log(map(mapArray, "constant"));
+console.log(map(mapArray, "plusI", 2));
+console.log("<-------------------- 2nd. Method ----------------------->");
+
+const maps = function (arr, fnName, forvalue = 0) {
+  let array = [];
+
+  // Define the internal functions
+  function plusone(n) {
+    return n + 1;
+  }
+
+  function plusI(n, i) {
+    return n + i;
+  }
+
+  function constant() {
+    return 42;
+  }
+
+  // Create a mapping of function names to the actual functions
+  const functions = {
+    plusone,
+    plusI,
+    constant,
+  };
+
+  // Check if the passed fnName exists in the functions map
+  // if (!functions[fnName]) {
+  //   throw new Error("Function not found");
+  // }
+
+  // Use the selected function to process each element
+  arr.forEach((element, index) => {
+    array.push(functions[fnName](element, index)); // Call the function by name
+  });
+
+  return array; // Return the new array
+};
+
+// Example usage
+let mapArray1 = [11, 12, 13, 14];
+console.log(maps(mapArray1, "plusone")); // [12, 13, 14, 15]
+console.log(maps(mapArray1, "plusI")); // [14, 15, 16, 17]
+console.log(maps(mapArray1, "constant")); // [42, 42, 42, 42]
+
+console.log(
+  "<-------------------- 2634. Filter Elements from Array ----------------------->"
+);
+console.log("2634. Filter Elements from Array");
+
+function greaterThan10(n) {
+  return n > 10;
+}
+
+function firstIndex(n, i) {
+  return i === 0;
+}
+
+function plusOne(n) {
+  return n + 1;
+}
+
+let filter = function (arr, fn, forValue = 0) {
+  let result = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (fn(arr[i], i)) {
+      result.push(arr[i]);
+      // result.push(fn(arr[i],  i)); // gives value according to return fn value
+    }
+  }
+
+  return result;
+};
+
+let mapArray2 = [-11, -12, -1, -13, 0, 15, 16, -1];
+console.log(filter(mapArray2, greaterThan10));
+console.log(filter(mapArray2, firstIndex, 2));
+console.log(filter(mapArray2, plusOne));
+
+console.log(
+  "<--------------------   2626. Array Reduce Transformation ----------------------->"
+);
+console.log("  2626. Array Reduce Transformation");
+
+// function sum(accum, curr) {
+//   return accum + curr;
+// }
+
+function sum(accum, curr) {
+  return accum + curr * curr;
+}
+
+// function sum(accum, curr) {
+//   return 0;
+// }
+var reduce = function (nums, fn, init) {
+  let result = init;
+  for (let i = 0; i < nums.length; i++) {
+    init = fn(init, nums[i]);
+    console.log(init);
+  }
+
+  return result;
+};
+
+nums = [1, 2, 3, 4];
+console.log(reduce(nums, sum, 100));
+
+var reduce1 = function (nums, fn, init) {
+  if (nums.length === 0) {
+    return init;
+  }
+  let accum = init;
+  nums.forEach((i) => {
+    accum = fn(accum, i);
+    // console.log(accum);
+  });
+  return accum;
+};
+
+nums1 = [1, 2, 3, 4];
+// console.log(reduce1(nums1, sum, 100));
+
+console.log(
+  "<--------------------   2629. Function Composition ----------------------->"
+);
+console.log("2629. Function Composition");
+
+var compose = function (functions) {
+  return function (x) {
+    // if (!Object.keys(functions).length) {
+    //   return x;
+    // }
+    // console.log(Object.keys(functions).length);
+
+    let valueFromFn = functions.length - 1;
+    for (let i = valueFromFn; i >= 0; i--) {
+      // let fnFromArray = functions[i];
+      // console.log(fnFromArray);
+      // functions[0](valueOne);
+      x = functions[i](x);
+    }
+    return x;
+  };
+};
+
+const fn = compose([(x) => x + 1, (x) => 2 * x]);
+console.log(fn(4)); // 9
+
+const fn1 = compose([(x) => 10 * x, (x) => 10 * x, (x) => 10 * x]);
+console.log(fn1(1)); // 9
+
+const fn2 = compose([]);
+console.log(fn2(42)); // 9
+
+var compose1 = function (functions) {
+  return function (x) {
+    // if (functions.length) {
+    //   return x;
+    // }
+
+    functions.reverse().forEach((fn) => {
+      x = fn(x);
+    });
+    return x;
+  };
+};
+
+const fn3 = compose1([(x) => x + 1, (x) => 2 * x]);
+console.log(fn3(4)); // 9
+
+const fn4 = compose1([]);
+const fn5 = compose1([]);
+const fn6 = compose1([]);
+const fn7 = compose1([]);
+console.log(fn4(42)); // 9
+console.log(fn5(142)); // 9
+console.log(fn6(146)); // 9
+console.log(fn7(69)); // 9
