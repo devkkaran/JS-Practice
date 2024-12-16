@@ -6,7 +6,7 @@ console.log(typeof valueToNumber)
 console.log(valueToNumber)
 
 
-// "Devkaran" => Nan
+// "Devkaran" => Nann
 // "33" => 33
 // undefined => NaN
 // true => 1 , false => 0

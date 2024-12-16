@@ -15,10 +15,10 @@ for (const key in myObject) {
 
 const myArr = ["JS", "PHP", "HTML", "CSS", "mySQL"];
 
-for (const key in myArr) {
-    console.log(key);
-    console.log(myArr[key]);
-}
+// for (const key in myArr) {
+//     console.log(key);
+//     console.log(myArr[key]);
+// }
 
 // for (const [key, value] of myObject) {
     // console.log(`${key} - ${value}`);
@@ -30,13 +30,20 @@ let arrayOfObjects = [
     { name: "Charlie", age: 35 }
 ];
 
-for (const key in arrayOfObjects) {
-    console.log(key);
-    // console.log(myArr[key]);
-}
 
 const checkString = 'Devkaran';
 
-for (const key in checkString) {
-    console.log(checkString[key]);
+// for (const key in checkString) {
+//     console.log(checkString[key]);
+// }
+
+for (const key in arrayOfObjects) {
+    console.log(key);
+    console.log(arrayOfObjects[key]);
 }
+
+
+
+
+
+

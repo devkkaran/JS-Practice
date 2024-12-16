@@ -25,11 +25,11 @@
     console.log(parent.childNodes);
     console.log(parent.style.color = "yellow");
 
-    // const classParent = document.getElementsByClassName('parent');
-    // console.log(classParent);
+    const classParent = document.getElementsByClassName('parent');
+    console.log(classParent.childNodes);
 
-    // const parentId = document.getElementsByClassName("day");  // not work in html collection
-    // console.log(parentId.firstElementChild);
+    const parentId = document.getElementsByClassName("day");  // not work in html collection
+    console.log(parentId.firstElementChild);
 
     for(let i = 0; i < parent.children.length; i++){
         console.log(parent.children[i]);
@@ -58,8 +58,10 @@
     // console.log("Nodes: ", parent.children);
 
     // it shows HTML Collection doesn't have property hich redirect individual  element for that we have to use individual element selector
-    const parentId = document.getElementsByClassName("day");  
-    console.log(parentId);
+    // const parentId = document.getElementsByClassName("day");  
+    // console.log(parentId);
+
+    
 
 </script>
 </html>

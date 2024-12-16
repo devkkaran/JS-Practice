@@ -57,12 +57,19 @@ const symbols = Object.getOwnPropertySymbols(emptyObj);
 let val1;
 val1 = 12 ?? 369;
 val1 = null ?? undefined;
-val1 = 369 ?? null;
-val1 = 4898 ?? undefined;
+// val1 = 369 ?? null;
+// val1 = 4898 ?? undefined;
 
 
 let emptyObject = new Object();
 console.log(val1);
+
+// this is short implicet method but it is not right practice
+// Use ; and , in this 
+
+// if (balance > 500) console.log("test"), 
+// console.log("Test2");
+
 
 // Terniary Operator
 
@@ -73,6 +80,7 @@ console.log(val1);
 
 console.log(Object.keys(emptyObj).length);
 console.log(Object.values(emptyObj).length);
+console.log(Object.entries(emptyObj));
 
 let checkBool = true;
 console.log(checkBool.length);

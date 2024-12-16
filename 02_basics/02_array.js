@@ -35,3 +35,11 @@ const number2 = 14;
 const number3 =  15;
 
 console.log(Array.of(marvel_heroes, number1));
+
+
+const rev = [ "Devkaran", "Vijayraj", "Gopal"]
+console.log(rev);
+
+console.log(rev.indexOf("Gopal"))
+
+

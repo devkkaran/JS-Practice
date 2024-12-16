@@ -11,8 +11,8 @@ const balance = 1000;
 // this is short implicet method but it is not right practice
 // Use ; and , in this 
 
-// if (balance > 500) console.log("test"), 
-// console.log("Test2");
+if (balance > 500) console.log("test"), 
+console.log("Test2");
 
 if(balance > 500){
     console.log("This is Greater than 500");
@@ -30,5 +30,6 @@ const loggedFromGoogle = false;
 const loggedFromEmil = true;
 
 if(loggedFromGoogle || loggedFromEmil){
-    console.log("User Logged In");
+    // console.log("User Logged In");
+    return "User Logged In"
 }

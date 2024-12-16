@@ -96,7 +96,9 @@ let mapBooks = books.map(
 
 console.log(mapBooks);
 
-filterBooks = books.filter((name) => {
+filterBooks = books.filter((name, index) => {
+  console.log(index);
+  
   return name.genre == "History" || name.genre == "Science";
 });
 

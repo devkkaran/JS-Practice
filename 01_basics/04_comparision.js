@@ -7,7 +7,7 @@
 // console.log(2 == 1);
 // console.log(2 != 1);
 
-// console.log("2" > 1);
+// console.log("2" > 1);nn
 
 
 // Avoid this type of comparison 

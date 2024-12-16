@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+
+<body style="background-color: aqua; color: black;">
+    <h2>Amazing images</h2>
+
+    <ul id="images">
+
+        <li><img src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                alt="" width="200px"></li>
+        <li><img src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                alt="" width="200px"></li>
+        <li><img src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                alt="" width="200px"></li>
+        <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl63pmKPwIwg8-kfJNah_8oPCPjZAvc6qPvA&s"
+                alt="" width="200px" id="owl"></li>
+        <li><img src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                alt="" width="200px"></li>
+
+        <li><a href="https://google.com" id="google">Google</a></li>
+
+    </ul>
+</body>
+
+<script>
+    document.getElementById("images").addEventListener("click", function (e) {
+        console.log("Click Inside ul");
+        
+    })
+    // document.getElementsByTagName("img").addEventListener("click", function (e) {
+        //     e.stopPropagation();
+        //     console.log("Clicked OWL");
+        //     console.log(document.getElementsByTagName("img"));
+        // }, true)
+        
+        Array.from(document.getElementsByTagName("img")).forEach(element => {
+            element.addEventListener("click", function (e) {
+            e.stopPropagation();
+
+            console.log("Clicked Image Tag");
+            if(e.target.id === "owl"){
+                e.target.remove()
+                console.log(e);
+                
+                console.log(e.target.id);
+                console.log(e.tagname);
+                console.log(e.src);
+                console.log(e.timestamp);
+                console.log(e.srckey);
+                console.log(e.altkey);
+                console.log(e.type);
+                console.log(e.defaultPrevented);
+                console.log(e.target);
+                console.log(e.toElement);
+                console.log(e.srcElement);
+                console.log(e.currentTarget);
+                console.log(e.clientX);
+                console.log(e.clientY);
+                console.log(e.screenX);
+                console.log(e.screenY56);
+                console.log(e.ctrlkey);
+                console.log(e.shiftkey);
+                console.log(e.keyCode);
+                alert("Owl image is clicked")
+            }
+        })
+    });
+</script>
+
+</html>

@@ -21,7 +21,7 @@
                     src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
                     alt=""></li>
             <li><img width="200px" id="owl"
-                    src="https://cdn.cdnparenting.com/articles/2021/03/12132308/Artical-draw-OWl_6.webp" alt=""></li>
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl63pmKPwIwg8-kfJNah_8oPCPjZAvc6qPvA&s" alt=""></li>
             <li><img width="200px" id="prayer"
                     src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
                     alt=""></li>
@@ -54,7 +54,6 @@
         console.log('three');
     }
 
-
     document.getElementById('owl').onclick = function(){
         alert("owl clicked")
     }
@@ -63,6 +62,8 @@
     // jQuery - on
     document.getElementById('images').addEventListener('click', function(e){
         console.log('Click inside ul');
+        console.log(e);
+        
     }, true)
 
 
@@ -71,7 +72,7 @@
         console.log(e);   // poiner event
         console.log(e.timeStamp);
         console.log(e.target);          //HTML tag element
-        // e.stopPropagation();         
+        // e.stopPropagation();
     })
 
 
@@ -89,6 +90,7 @@
         removeIt.remove();
         console.log(removeIt);
         console.log(e.target);
+        console.log(e.target.id);
     }
     // removeIt.parentNode.removeChild(removeIt)  // this is different way
 
@@ -102,17 +104,17 @@
 
 // About Propogation and Related this
 // True:- From Outside to Inner Side
-// False:- From Inner to Outer Side (Defaut)
+// False:- From Inner to Outer Side (Default)
 
 
-    // document.getElementById('images').addEventListener('click', function (e) {
-    //     console.log("clicked inside the ul");
-    // }, true)
+    document.getElementById('images').addEventListener('click', function (e) {
+        console.log("clicked inside the ul");
+    })
 
-    // document.getElementById('owl').addEventListener('click', function (e) {
-    //     console.log("owl clicked");
-    //     // e.stopPropagation()
-    // }, false)
+    document.getElementById('owl').addEventListener('click', function (e) {
+        console.log("owl clicked");
+        e.stopPropagation()
+    })
 
     // document.getElementById('google').addEventListener('click', function (e) {
     //     e.preventDefault();

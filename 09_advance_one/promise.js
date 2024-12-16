@@ -1,4 +1,4 @@
-// console.log("<-------------------- Promise One Object ----------------------->");
+console.log("<-------------------- Promise One Object ----------------------->");
 
 const promiseOne = new Promise(function(resolve, reject){
     setTimeout(function(){
@@ -12,7 +12,7 @@ const promiseOne = new Promise(function(resolve, reject){
 //     console.log('Async Task 1 is resolved');
 // });
 
-// console.log("<--------------------2nd Promise Object ----------------------->");
+console.log("<--------------------2nd Promise Object ----------------------->");
 
 new Promise(function(resolve, reject){
     setTimeout(function(){
@@ -23,7 +23,7 @@ new Promise(function(resolve, reject){
     console.log("Async Task 2 is resolved");
 })
 
-// console.log("<--------------------3rd Promise Object ----------------------->");
+console.log("<--------------------3rd Promise Object ----------------------->");
 
 const promiseThree = new Promise((resolve, reject) => {
     console.log("Async Task 3");
@@ -156,7 +156,6 @@ async function getData() {
 }
 
 getData(); // Calls the async function
-
 
 async function fetchError() {
     try {

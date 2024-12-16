@@ -31,7 +31,8 @@ if (true) {
 
     console.log(addOne(3));
     console.log(addTwo(5));
-    console.log(addThree(3));
+    // console.log(addThree(3));
+    // addThree(12)
 }
 
 // console.log(userName);
@@ -49,5 +50,7 @@ const addTwo = function (add) {
 }
 
 const addThree = (num) => (num + 3);
+
+const addFour = (num) => (num + 6);
 
 

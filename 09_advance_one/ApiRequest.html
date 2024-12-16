@@ -5,41 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body style="background-color: #212121;">
-
-0	UNSENT	Client has been created. open() not called yet.
-1	OPENED	open() has been called.
-2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
-3	LOADING	Downloading; responseText holds partial data.
-4	DONE The operation is complete.
+<body>
+    <h3>0	UNSENT	Client has been created. open() not called yet.</h3>
+    <h3>1	OPENED	open() has been called.</h3>
+    <h3>2	HEADERS_RECEIVED	send() has been called, and headers and status are available.</h3>
+    <h3>3	LOADING	Downloading; responseText holds partial data.</h3>
+    <h3>4	DONE The operation is complete.</h3>
+    <h4></h4>
 </body>
 <script>
-    const requestUrl = 'https://api.github.com/users/devkaran-k'; 
+    const requestUrl = 'https://api.github.com/users/devkaran-k';
     const xhr = new XMLHttpRequest();
 
     xhr.open('GET', requestUrl);
-    console.log('HERE');
-    xhr.send(); // Send THe API Request
-    
-    xhr.onreadystatechange = function(){
-        console.log(xhr.readyState);
-        if(this.readyState === 4){
-            console.table(this.responseText);
-            const data = JSON.parse(this.responseText);  // response come in string 
-            console.log(data);
-            console.log(data.following);
-        }
-    }
-    
+    xhr.send(); // Send the API Request
 
-    new Promise(function(resolve){
-        setTimeout(() => {
-            console.log('It is revision of Promise');
-        }, 1);
-        resolve();
-        
-    }).then(function(){
-        console.log('Problem is solved');
-})
+    xhr.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            // Parse the API response
+            console.log(this.responseText);
+            
+            const data = JSON.parse(this.responseText);
+            console.log(data);
+
+            // Convert the data object to a formatted JSON string
+            const jsonData = JSON.stringify(data, null, 4) ; // Pretty print with 4 spaces
+
+            // Display the formatted JSON string inside the <h4> tag
+            document.getElementsByTagName('h4')[0].innerHTML = `<pre>${jsonData}</pre>`;
+        }
+    };
 </script>
+
 </html>

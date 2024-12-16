@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeout & Clear Timeout </title>
+</head>
+
+<body>
+    <h1>Hello Brother!!!</h1>
+
+    <button id="button"> Alert</button>
+</body>
+<script>
+    const firstDate = function () {
+        document.querySelector('h1').innerHTML = "Testing of Timeout"
+        console.log(document.getElementsByTagName('h1')); // HTML collection
+
+    }
+
+    const changMe = setTimeout(firstDate, 5000)
+
+    document.getElementById('button').addEventListener('click', () => {
+        clearTimeout(changMe)
+        console.log('Button Clicked');
+
+    })
+</script>
+
+</html>

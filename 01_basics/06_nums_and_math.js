@@ -14,11 +14,12 @@ console.log(typeof otherNumber);
 
 
 const hundreads = 10023456;
-// console.log(hundreads.toLocaleString('en-IN'));
+console.log(hundreads.toLocaleString('en-IN'));
 
 // +++++++++++++ Maths +++++++++++++++++++++++++++++
 
-// console.log(Math);
+
+console.log(Math);
 
 console.log(Math.abs(-3.33));
 console.log(Math.ceil(3.3475757));

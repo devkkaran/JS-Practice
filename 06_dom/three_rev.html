@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Element</title>
+</head>
+<body style="background-color: black; color: green;">
+    
+</body>
+<script>
+    const div = document.createElement("div")
+    div.className = "divClass";
+    div.id = Math.round(Math.random() * 10)
+    const text = document.createTextNode("It is checking about new Text node")
+    const div1 = document.body.appendChild(div);
+    div1.appendChild(text)
+    console.log(div1);
+    
+    div1.style.color = "red";
+    div1.style.backgroundColor = "yellow"
+    div1.style.fontSize = "26px"
+</script>
+</html>

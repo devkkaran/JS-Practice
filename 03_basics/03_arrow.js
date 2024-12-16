@@ -60,7 +60,7 @@ returnName(3, 5);
 const anotherName = (num2, num5) => ({ userName: "Laxmi" });
 
 anotherName(12, 23);
-// console.log(anotherName(123,456));
+console.log(anotherName(123,456));
 
 const addTwo = (num1, num2) => num1 + num2; // use console
 console.log(addTwo(23, 23));

@@ -24,6 +24,7 @@ console.log("<------------Object Destructor------------->");
 
 const {fullname: {userDetails: {firstName}} , mainName} = userName;
 console.log(firstName);
+// console.log(mainName);
 
 const {firstname: myName} = userName;
 console.log(myName);
@@ -53,8 +54,11 @@ console.log(mixObj1);
 const target = { a: 1, b: 2 };
 const source = { b: 4, c: 5 };
 
-const returnedTarget = Object.assign({}, target, source);
+const returnedTarget = Object.assign(target, source);
+const returnedTarget1 = Object.assign({}, target, source);
 
+console.log(target);
+console.log(returnedTarget1);
 // console.log(target);
 // Expected output: Object { a: 1, b: 4, c: 5 }
 
@@ -84,7 +88,8 @@ const tinderUser = [
 ]
 
 // tinderUser[1].email
-console.log(tinderUser);
+console.log(tinderUser[0]["id"]);
+console.log(tinderUser[0].email);
 
 console.log(Object.keys(tinderUser));
 console.log(Object.values(tinderUser));
@@ -104,7 +109,6 @@ const tinderUser1 =  [
     obj1,
     obj2,
     obj3
-
 ]
 
 // console.log(tinderUser1);
@@ -113,6 +117,8 @@ console.log(Object.keys(tinderUser1));
 // console.log(Object.values(tinderUser1));
 console.log(Object.entries(tinderUser1));
 // console.log(tinderUser1.hasOwnProperty('isLoggedIn'));
+
+
 
 
 

@@ -15,7 +15,7 @@ console.log(user.getUserDetails())
 console.log(user.userNAame)
 
 // When We Use this in browser it gives context of global Windiw Object and gives Proprties and method
-console.log(this);
+// console.log(this);
 
 console.log("<-------------------- Constructor Function: ----------------------->");
 // simple this function ma rakhta khali tenu property and method aavti parantu nicheni jem badham this. use karta function object thai gayu ane pachi te this print karta aakha Objetc ni jem badhi method ane property ape che. 
@@ -26,7 +26,7 @@ function User(userName, loginCount, signedIn){
     this.signedIn = signedIn
         // console.log(this)
     this.greeting = function(check){
-        console.log(`Welcom to ${this.userName}`);
+        console.log(`Welcome to ${this.userName}`);
         console.log(check);
         
     }

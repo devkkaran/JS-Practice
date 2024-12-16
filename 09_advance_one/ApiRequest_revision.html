@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIRequest Revision</title>
+</head>
+
+<body>
+    <pre>
+        Asynchronous Programming
+Definition:
+Asynchronous programming allows a program to perform tasks without blocking the execution of other tasks. This is especially useful when dealing with operations that take time to complete, such as fetching data from a server or reading a file.
+
+Key Points:
+
+Non-Blocking: It allows your code to continue running while waiting for certain operations to complete.
+Concurrency: Helps in performing multiple tasks at the same time (concurrent operations).
+Example:
+Imagine you’re waiting for a pizza to be delivered. Instead of waiting idly at home, you could use that time to do other things. Similarly, asynchronous programming lets your code continue running while waiting for certain tasks (like fetching data) to complete.
+
+Promises
+Definition:
+A Promise is an object representing the eventual completion or failure of an asynchronous operation. It’s like a placeholder for a value that’s not available yet but will be resolved in the future.
+
+Key Points:
+
+States of a Promise:
+
+Pending: Initial state; neither fulfilled nor rejected.
+Fulfilled: The operation completed successfully.
+Rejected: The operation failed.
+Methods:
+
+.then(onFulfilled, onRejected): Executes a function when the promise is fulfilled or rejected.
+.catch(onRejected): Catches errors if the promise is rejected.
+.finally(onFinally): Executes a function regardless of the promise's outcome.
+Example:
+
+javascript
+Copy code
+const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        const success = true; // Simulate success or failure
+        if (success) {
+            resolve("Data received");
+        } else {
+            reject("Error occurred");
+        }
+    }, 2000);
+});
+
+promise.then(data => {
+    console.log(data); // Logs "Data received" if successful
+}).catch(error => {
+    console.log(error); // Logs "Error occurred" if failed
+});
+async and await
+Definition:
+
+async: A keyword used to declare a function as asynchronous. It ensures that the function always returns a promise. If the function returns a value, that value is wrapped in a promise.
+await: A keyword used inside async functions to pause execution until the promise is resolved or rejected. It simplifies working with promises and makes asynchronous code look more like synchronous code.
+Key Points:
+
+async Function: Automatically returns a promise. If the function returns a value, that value is wrapped in a promise.
+await Expression: Pauses the function execution until the promise is resolved, then returns the result. If the promise is rejected, await throws an error.
+Example:
+
+javascript
+Copy code
+// Function that simulates fetching data with a delay
+async function fetchData() {
+    return new Promise((resolve) => {
+        setTimeout(() => resolve("Fetched Data"), 2000);
+    });
+}
+
+// Async function using await to handle the promise
+async function getData() {
+    try {
+        const data = await fetchData(); // Waits for fetchData to resolve
+        console.log(data); // Logs "Fetched Data"
+    } catch (error) {
+        console.log("Error:", error); // Handles any error
+    }
+}
+
+getData(); // Calls the async function
+Summary:
+Asynchronous Programming: Allows your code to perform tasks without waiting for them to complete.
+Promises: Represent the future result of an asynchronous operation, handling success or failure.
+async and await: Provide a cleaner way to work with promises, making asynchronous code easier to read and write.
+Understanding these concepts will help you handle asynchronous operations effectively and write more readable and maintainable code.
+    </pre>
+    <h4></h4>
+</body>
+<script>
+    const url = "https://api.github.com/users/devkaran-k"
+
+    const xml = new XMLHttpRequest();
+
+    xml.open('GET', url);
+    xml.send();
+
+    xml.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            const data = this.responseText;
+
+            document.getElementsByTagName('h4')[0].innerHTML = `<pre> ${data} </pre>`
+        }
+    }
+
+</script>
+
+</html>
